@@ -2,6 +2,7 @@ package ch.bbw.m151.jokesdb;
 
 import ch.bbw.m151.jokesdb.datamodel.JokesEntity;
 import ch.bbw.m151.jokesdb.repository.JokesRepository;
+import ch.bbw.m151.jokesdb.service.RemoteJokesService;
 import org.assertj.core.api.WithAssertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,20 @@ public class JokesDbApplicationTest implements WithAssertions {
 				.is2xxSuccessful()
 				.expectBodyList(JokesEntity.class)
 				.hasSize(pageSize);
+	}
+
+	@Autowired
+	RemoteJokesService remoteJokesService;
+
+	@Test
+	void motd() {
+		System.out.println(remoteJokesService.jotd()
+				.getJoke());
+	}
+
+	@Test
+	void whyNot() {
+		var joke = new JokesEntity().setJoke("sdf");
+		jokesRepository.save(joke);
 	}
 }
