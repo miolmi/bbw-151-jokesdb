@@ -1,5 +1,10 @@
 # JokesDB
 
+
+in this project I would be satisfied with a grade 4. I felt more and more lost as the module progressed, and clicked off as time went on. Coding felt really hard this time as I didn't know what I was doing exactly.
+
+
+
 A minimal application to play with JPA and spring data topics.
 
 ## 🐳 Postgres with Docker
